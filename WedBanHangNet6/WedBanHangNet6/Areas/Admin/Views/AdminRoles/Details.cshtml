@@ -1,0 +1,36 @@
+﻿@model WedBanHangNet6.Models.Role
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mb-4" style="margin-left:20px; margin-top:10px; width:60%">
+    <h5 class="card-header">Chi tiết</h5>
+    <div class="card-body">
+        <div class="mb-3 row">
+            <label for="html5-text-input" class="col-md-2 col-form-label">Role ID</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" value="@Model.RoleId" readonly />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="html5-search-input" class="col-md-2 col-form-label">Role Name</label>
+            <div class="col-md-10">
+                <input class="form-control" type="search" value="@Model.RoleName" readonly/>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="html5-email-input" class="col-md-2 col-form-label">Description</label>
+            <div class="col-md-10">
+                <textarea class="form-control"   rows="3" readonly>@Model.Description</textarea>
+            </div>
+        </div>
+
+    </div>
+    <div style="margin-bottom:50px;margin-right:18px ">
+        <a style="float:right" class="btn rounded-pill btn-outline-secondary" asp-action="Index">Xem danh sách </a>
+        <a style="float:right" class="btn rounded-pill btn-outline-secondary" asp-action="Edit" asp-route-id="@Model?.RoleId">Chỉnh sửa</a>
+    </div>
+</div>
+

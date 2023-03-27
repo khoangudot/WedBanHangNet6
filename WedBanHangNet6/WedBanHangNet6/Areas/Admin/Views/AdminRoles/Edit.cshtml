@@ -1,0 +1,44 @@
+﻿@model WedBanHangNet6.Models.Role
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mb-4" style="margin-left:20px; margin-top:10px; width:60%">
+    <h5 class="card-header">Chỉnh sửa quyền truy cập</h5>
+    <form asp-action="Edit" asp-route-id="@Model.RoleId" method="post">
+        <div class="card-body">
+        <div class="mb-3 row">
+            <label for="html5-text-input" class="col-md-2 col-form-label">Role ID</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" asp-for="RoleId" value="@Model.RoleId" readonly  />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="html5-search-input" class="col-md-2 col-form-label">Role Name</label>
+            <div class="col-md-10">
+                    <input class="form-control" type="text" asp-for="RoleName" value="@Model.RoleName" />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="html5-email-input" class="col-md-2 col-form-label">Description</label>
+            <div class="col-md-10">
+                <textarea class="form-control" rows="3" asp-for="Description" >@Model.Description</textarea>
+            </div>
+        </div>
+
+    </div>
+       <div style="margin-top:-60px">
+            <div style="margin-bottom:50px;margin-right:18px ">
+                <a style="float:right" class="btn rounded-pill btn-outline-secondary" asp-action="Index">Xem danh sách </a>
+
+            </div>
+            <input style="float:right" class="btn rounded-pill btn-outline-secondary" type="submit" value="Chỉnh sửa" />
+       </div>
+        
+    </form>
+    
+</div>
+
+

@@ -1,49 +1,98 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+<!-- Basic -->
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WedBanHangNet6</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WedBanHangNet6.styles.css" asp-append-version="true" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Cơm không ngon</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/assets/images/apple-touch-icon.png">
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.~/assets/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WedBanHangNet6</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a>
-                        </li>
-                    </ul>
+    @RenderBody()
+    <!--Header -->
+    @await Html.PartialAsync("_Header")
+    <!--End Header -->
+    <!-- Start Slider -->
+   @await Html.PartialAsync("_Slide")
+    <!-- End Slider -->
+    <!-- Start Categories  -->
+    @await Html.PartialAsync("_Categories")
+    <!-- End Categories -->
+
+    <div class="box-add-products">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="offer-box-products">
+                        <img class="img-fluid" src="~/assets/images/add-img-01.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="offer-box-products">
+                        <img class="img-fluid" src="~/assets/images/add-img-02.jpg" alt="" />
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - WedBanHangNet6 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <!-- Start Products  -->
+    @await Html.PartialAsync("_Products")
+    <!-- End Products  -->
+
+ 
+    
+    <!-- Start Footer  -->
+    @await Html.PartialAsync("_Footer")
+    <!-- End Footer  -->
+   
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    
+    <!-- ALL JS FILES -->
+    <script src="~/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="~/assets/js/jquery.superslides.min.js"></script>
+    <script src="~/assets/js/bootstrap-select.js"></script>
+    <script src="~/assets/js/inewsticker.js"></script>
+    <script src="~/assets/js/bootsnav.js."></script>
+    <script src="~/assets/js/images-loded.min.js"></script>
+    <script src="~/assets/js/isotope.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/baguetteBox.min.js"></script>
+    <script src="~/assets/js/form-validator.min.js"></script>
+    <script src="~/assets/js/contact-form-script.js"></script>
+    <script src="~/assets/js/custom.js"></script>
 </body>
+
 </html>
